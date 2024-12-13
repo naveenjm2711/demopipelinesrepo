@@ -2,17 +2,17 @@
 	"name": "parameteredinputfile1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage1",
+			"referenceName": "AzureDataLakeStorage2",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"ds_directory": {
 				"type": "string"
 			},
-			"ds_folder": {
+			"ds_inputfolder1": {
 				"type": "string"
 			},
-			"ds_filename": {
+			"ds_inputfilename1": {
 				"type": "string"
 			}
 		},
@@ -22,11 +22,11 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().ds_filename",
+					"value": "@dataset().ds_inputfilename1",
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@dataset().ds_folder",
+					"value": "@dataset().ds_inputfolder1",
 					"type": "Expression"
 				},
 				"fileSystem": {

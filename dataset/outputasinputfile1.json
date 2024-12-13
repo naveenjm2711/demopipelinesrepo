@@ -14,9 +14,6 @@
 			},
 			"ds_json_filname": {
 				"type": "String"
-			},
-			"ds_inputforjson": {
-				"type": "String"
 			}
 		},
 		"annotations": [],
@@ -25,7 +22,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().ds_inputforjson",
+					"value": "@dataset().ds_json_filname",
 					"type": "Expression"
 				},
 				"folderPath": {
@@ -37,7 +34,7 @@
 					"type": "Expression"
 				}
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""

@@ -56,11 +56,11 @@
 								"value": "@pipeline().parameters.pp_directrory",
 								"type": "Expression"
 							},
-							"ds_folder": {
+							"ds_inputfolder1": {
 								"value": "@pipeline().parameters.pp_inputfolder",
 								"type": "Expression"
 							},
-							"ds_filename": {
+							"ds_inputfilename1": {
 								"value": "@pipeline().parameters.pp_filename",
 								"type": "Expression"
 							}
@@ -156,11 +156,11 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"ds_archivefolder": {
-								"value": "@pipeline().parameters.pp_finaloutputname",
+								"value": "@pipeline().parameters.pp_outputfolder",
 								"type": "Expression"
 							},
 							"ds_finaloutput": {
-								"value": "@pipeline().parameters.pp_finaloutputfolder",
+								"value": "@pipeline().parameters.pp_finaloutputname",
 								"type": "Expression"
 							},
 							"ds_archivedirectory": {
