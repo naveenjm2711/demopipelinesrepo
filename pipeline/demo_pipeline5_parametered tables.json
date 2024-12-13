@@ -17,7 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from SalesLT.CustomerAddress",
+						"sqlReaderQuery": {
+							"value": "@concat('select * from ',pipeline().parameters.tablename, 'where color= ''', pipeline().parameters.color)",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -56,6 +59,14 @@
 				]
 			}
 		],
+		"parameters": {
+			"color": {
+				"type": "String"
+			},
+			"tablename": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
