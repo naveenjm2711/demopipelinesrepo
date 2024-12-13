@@ -8,9 +8,6 @@
 		"parameters": {
 			"tablename": {
 				"type": "String"
-			},
-			"color_req": {
-				"type": "String"
 			}
 		},
 		"annotations": [],
