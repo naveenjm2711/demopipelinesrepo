@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "outputsqlfile2",
+				"fileName": "outputsqlFile_parametered",
 				"folderPath": "input1.1",
 				"fileSystem": "project"
 			},

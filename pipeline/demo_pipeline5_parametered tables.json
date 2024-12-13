@@ -18,7 +18,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "@concat('select * from ',pipeline().parameters.tablename, 'where color= ''', pipeline().parameters.color)",
+							"value": "@concat('select * from ',pipeline().parameters.tablename, 'where color=''',pipeline().parameters.color)",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -48,7 +48,10 @@
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": "Product"
+						}
 					}
 				],
 				"outputs": [
