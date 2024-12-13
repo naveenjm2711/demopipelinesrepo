@@ -17,7 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT TOP (1000) * FROM \n[SalesLT].[ProductDescription]",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
