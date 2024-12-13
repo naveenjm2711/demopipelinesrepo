@@ -50,13 +50,41 @@
 				"inputs": [
 					{
 						"referenceName": "parameteredinputfile1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_directory": {
+								"value": "@pipeline().parameters.pp_directrory",
+								"type": "Expression"
+							},
+							"ds_folder": {
+								"value": "@pipeline().parameters.pp_inputfolder",
+								"type": "Expression"
+							},
+							"ds_filename": {
+								"value": "@pipeline().parameters.pp_filename",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "paramterisedoutputfile1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_directory": {
+								"value": "@pipeline().parameters.pp_directrory",
+								"type": "Expression"
+							},
+							"ds_folder": {
+								"value": "@pipeline().parameters.pp_outputfolder",
+								"type": "Expression"
+							},
+							"ds_filename": {
+								"value": "@pipeline().parameters.pp_filename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
