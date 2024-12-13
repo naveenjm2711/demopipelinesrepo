@@ -87,6 +87,89 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Copy data2",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "outputasinputfile1",
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_directory2": {
+								"value": "@pipeline().parameters.pp_directrory",
+								"type": "Expression"
+							},
+							"ds_folder2": {
+								"value": "@pipeline().parameters.pp_outputfolder",
+								"type": "Expression"
+							},
+							"ds_json_filname": {
+								"value": "@pipeline().parameters.pp_filename",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "outputjson_Archive",
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_archivefolder": {
+								"value": "@pipeline().parameters.pp_finaloutputname",
+								"type": "Expression"
+							},
+							"ds_finaloutput": {
+								"value": "@pipeline().parameters.pp_finaloutputfolder",
+								"type": "Expression"
+							},
+							"ds_archivedirectory": {
+								"value": "@pipeline().parameters.pp_directrory",
+								"type": "Expression"
+							}
+						}
+					}
+				]
 			}
 		],
 		"parameters": {
@@ -101,6 +184,15 @@
 			},
 			"pp_filename": {
 				"type": "string"
+			},
+			"pp_directory2": {
+				"type": "String"
+			},
+			"pp_finaloutputfolder": {
+				"type": "String"
+			},
+			"pp_finaloutputname": {
+				"type": "String"
 			}
 		},
 		"annotations": []
