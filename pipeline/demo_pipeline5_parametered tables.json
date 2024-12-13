@@ -18,7 +18,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "@concat('select * from ',pipeline().parameters.tablename, 'where color=''',pipeline().parameters.color)",
+							"value": "@concat('select * from ', pipeline().parameters.tablename, 'where color= ''',pipeline().parameters.color,'''')",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -47,16 +47,19 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference",
 						"parameters": {
-							"tablename": "Product"
+							"tablename": {
+								"value": "@pipeline().parameters.tablename",
+								"type": "Expression"
+							}
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "outputsql",
+						"referenceName": "sqloutput2",
 						"type": "DatasetReference"
 					}
 				]
