@@ -5,20 +5,12 @@
 			"referenceName": "AzureSqlDatabase1",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"tablename": {
-				"type": "String"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "SalesLT",
-			"table": {
-				"value": "@dataset().tablename",
-				"type": "Expression"
-			}
+			"table": "ProductDescription"
 		}
 	}
 }
