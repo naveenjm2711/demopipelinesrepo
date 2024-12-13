@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from Product",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -49,7 +50,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "outputsql",
 						"type": "DatasetReference"
 					}
 				]
