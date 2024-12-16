@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "outputfile",
-				"folderPath": "outputs",
+				"fileName": "SalesLTProductCategory.txt",
+				"folderPath": "inputs",
 				"fileSystem": "dataflowproj"
 			},
 			"columnDelimiter": ",",
