@@ -1,0 +1,32 @@
+{
+	"name": "filetotableinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage21",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filetotablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filetotablename",
+					"type": "Expression"
+				},
+				"folderPath": "Landing/SalesFiles.zip",
+				"fileSystem": "poc1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
