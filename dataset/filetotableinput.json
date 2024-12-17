@@ -19,7 +19,7 @@
 					"value": "@dataset().filetotablename",
 					"type": "Expression"
 				},
-				"folderPath": "Landing",
+				"folderPath": "Landing/SalesFiles.zip",
 				"fileSystem": "poc1"
 			},
 			"columnDelimiter": ",",
