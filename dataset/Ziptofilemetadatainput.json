@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText7",
+	"name": "Ziptofilemetadatainput",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage14",

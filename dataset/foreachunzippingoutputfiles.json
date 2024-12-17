@@ -1,12 +1,12 @@
 {
-	"name": "foreachinputfrommetadata",
+	"name": "foreachunzippingoutputfiles",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage15",
+			"referenceName": "AzureDataLakeStorage19",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"zipfilename": {
+			"ziptofilename": {
 				"type": "string"
 			}
 		},
@@ -16,15 +16,13 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().zipfilename",
+					"value": "@dataset().ziptofilename",
 					"type": "Expression"
 				},
-				"folderPath": "Staging",
+				"folderPath": "Landing",
 				"fileSystem": "poc1"
 			},
 			"columnDelimiter": ",",
-			"compressionCodec": "ZipDeflate",
-			"compressionLevel": "Optimal",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""

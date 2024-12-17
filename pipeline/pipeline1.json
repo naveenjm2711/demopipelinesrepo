@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DelimitedText7",
+						"referenceName": "Ziptofilemetadatainput",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -99,7 +99,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText8",
+									"referenceName": "foreachinputfrommetadata",
 									"type": "DatasetReference",
 									"parameters": {
 										"zipfilename": {
@@ -111,10 +111,10 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DelimitedText8",
+									"referenceName": "foreachunzippingoutputfiles",
 									"type": "DatasetReference",
 									"parameters": {
-										"zipfilename": {
+										"ziptofilename": {
 											"value": "@item().name",
 											"type": "Expression"
 										}
@@ -123,6 +123,33 @@
 							]
 						}
 					]
+				}
+			},
+			{
+				"name": "Get Metadata2",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "filetotaablestep1",
+						"type": "DatasetReference"
+					},
+					"fieldList": [],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
 				}
 			}
 		],
