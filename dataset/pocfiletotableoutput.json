@@ -1,0 +1,23 @@
+{
+	"name": "pocfiletotableoutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase6",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": {
+				"value": "@dataset().Tablename",
+				"type": "Expression"
+			}
+		}
+	}
+}

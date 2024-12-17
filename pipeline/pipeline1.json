@@ -234,11 +234,11 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "pocfiletotableinput",
+									"referenceName": "pocfiletotableoutput",
 									"type": "DatasetReference",
 									"parameters": {
-										"tablename": {
-											"value": "@item().name",
+										"Tablename": {
+											"value": "@concat(item().name, utcNow())",
 											"type": "Expression"
 										}
 									}
